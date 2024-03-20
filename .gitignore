@@ -1,0 +1,8 @@
+terraform/vars.tf
+terraform/.terraform.lock.hcl
+terraform/terraform.tfstate.backup
+terraform/terraform.tfstate
+terraform/.terraform/*
+terraform/plan
+k0s/kubeconfig
+k0s/k0sctl-linux-x64

@@ -1,0 +1,28 @@
+apiVersion: k0sctl.k0sproject.io/v1beta1
+kind: Cluster
+metadata:
+  name: k0s-prod-cluster
+spec:
+  hosts:
+  - ssh:
+      address: 10.42.2.41
+      user: terraform
+      port: 22
+      keyPath: ~/.ssh/id_ed25519
+    role: controller
+  - ssh:
+      address: 10.42.2.42
+      user: terraform
+      port: 22
+      keyPath: ~/.ssh/id_ed25519
+    role: worker
+  - ssh:
+      address: 10.42.2.43
+      user: terraform
+      port: 22
+      keyPath: ~/.ssh/id_ed25519
+    role: worker
+  k0s:
+    version: v1.29.1+k0s.1
+    versionChannel: stable
+    dynamicConfig: false

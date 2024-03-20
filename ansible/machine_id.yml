@@ -1,0 +1,28 @@
+- hosts: all
+  become: true
+  become_user: root
+  tasks:
+
+    - name: Create new SSH keys
+      ansible.builtin.command: dpkg-reconfigure openssh-server
+
+    - name: Remove current machine ID in /etc
+      ansible.builtin.command: rm -f /etc/machine-id
+
+    - name: Generate new machine ID in /etc
+      ansible.builtin.command: dbus-uuidgen --ensure=/etc/machine-id
+
+    - name: Remove current machine ID in /var/lib/dbus
+      ansible.builtin.command: rm /var/lib/dbus/machine-id
+
+    - name: Generate new machine ID in /var/lib/dbus
+      ansible.builtin.command: dbus-uuidgen --ensure
+      
+    - name: Reboot to take effect
+      reboot:
+        msg: "Reboot initiated by Ansible for update of machineID"
+        connect_timeout: 5
+        reboot_timeout: 300
+        pre_reboot_delay: 0
+        post_reboot_delay: 30
+        test_command: uptime
