@@ -2,7 +2,7 @@ This repo has been written for the CrikeyCon 2024 talk "Lets take these results 
 
 NOTE: This is somewhat thrown together and does not follow best practice in a number of respects (ignoring host key checking, embedding a password in an tfvars file). Use this as an opportunity to question the decisions and commands I've used, and with googling to determine the best way to do it for you.
 
-NOTE: *DO NOT EMAIL THE AUTHOR SAYING IT DOES NOT WORK*. The intent of this exercise is to understand the thought processes required for a homelab. Looking up the libraries that are used, and their pre-requisites. I can guarantee no project on the internet will "just work" and you need to tailor it to your environment and tools.
+NOTE: _DO NOT EMAIL THE AUTHOR SAYING IT DOES NOT WORK_. The intent of this exercise is to understand the thought processes required for a homelab. Looking up the libraries that are used, and their pre-requisites. I can guarantee no project on the internet will "just work" and you need to tailor it to your environment and tools.
 
 # Rough Instructions
 1. prereq.sh is a file to install all pre-requisite libraries and tools. It is written for Ubuntu 22.04. Run this first.
